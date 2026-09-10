@@ -2,6 +2,7 @@ from . import paths
 import csv
 import os
 import sqlite3
+from pathlib import Path
 import folder_paths
 from .wildcards import WildcardLoader
 
@@ -85,6 +86,23 @@ class TagDataManager:
         cls.conn.commit()
 
     
+    @staticmethod
+    def resolve_data_path(base_dir, filename):
+        if filename == "None":
+            return None
+        if not isinstance(filename, str) or not filename:
+            raise ValueError("filename must be a non-empty string")
+
+        relative_path = Path(filename)
+        if relative_path.is_absolute() or ".." in relative_path.parts:
+            raise ValueError("filename must be relative to the data directory")
+
+        base_path = os.path.realpath(base_dir)
+        resolved_path = os.path.realpath(os.path.join(base_path, filename))
+        if os.path.commonpath((base_path, resolved_path)) != base_path:
+            raise ValueError("filename resolves outside the data directory")
+        return resolved_path
+
     # -------------------------------------------
     # Main CSV
     # -------------------------------------------
@@ -100,8 +118,8 @@ class TagDataManager:
         # 早期リターン
         if not cls.enable: return
         if not cls.main_filename or cls.main_filename == "None": return
-        csv_path = paths.tags_dir / cls.main_filename
-        if not csv_path.exists(): return
+        csv_path = cls.resolve_data_path(paths.tags_dir, cls.main_filename)
+        if not os.path.exists(csv_path): return
         
         with open(csv_path, mode="r", encoding="utf-8") as file:
             reader = csv.reader(file)
@@ -125,8 +143,8 @@ class TagDataManager:
 
         if not cls.enable: return
         if not cls.extra_filename or cls.extra_filename == "None": return
-        csv_path = paths.tags_dir / cls.extra_filename
-        if not csv_path.exists(): return
+        csv_path = cls.resolve_data_path(paths.tags_dir, cls.extra_filename)
+        if not os.path.exists(csv_path): return
         
         with open(csv_path, mode="r", encoding="utf-8") as file:
             reader = csv.reader(file)
@@ -149,8 +167,8 @@ class TagDataManager:
         
         if not cls.enable: return
         if not cls.translate_filename or cls.translate_filename == "None": return
-        csv_path = paths.translate_dir / cls.translate_filename
-        if not csv_path.exists(): return
+        csv_path = cls.resolve_data_path(paths.translate_dir, cls.translate_filename)
+        if not os.path.exists(csv_path): return
         
         with open(csv_path, mode="r", encoding="utf-8") as file:
             reader = csv.reader(file)

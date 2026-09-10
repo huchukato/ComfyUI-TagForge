@@ -7,6 +7,13 @@ from . import paths
 from aiohttp import web
 import folder_paths
 
+
+def load_data_file(filename_attr, loader, base_dir, filename):
+    TagDataManager.resolve_data_path(base_dir, filename)
+    setattr(TagDataManager, filename_attr, filename)
+    loader()
+
+
 # ===============================================
 # エンドポイント
 # ===============================================
@@ -58,8 +65,10 @@ async def load_main(req: web.Request):
     data = await req.json()
     filename = data.get("filename")
 
-    TagDataManager.main_filename = filename
-    TagDataManager.load_main()
+    try:
+        load_data_file("main_filename", TagDataManager.load_main, paths.tags_dir, filename)
+    except ValueError as error:
+        return web.json_response({"error": str(error)}, status=400)
 
     return web.json_response({"status": "success"})
 
@@ -70,8 +79,10 @@ async def load_extra(req: web.Request):
     data = await req.json()
     filename = data.get("filename")
 
-    TagDataManager.extra_filename = filename
-    TagDataManager.load_extra()
+    try:
+        load_data_file("extra_filename", TagDataManager.load_extra, paths.tags_dir, filename)
+    except ValueError as error:
+        return web.json_response({"error": str(error)}, status=400)
 
     return web.json_response({"status": "success"})
 
@@ -82,8 +93,10 @@ async def load_translate(req: web.Request):
     data = await req.json()
     filename = data.get("filename")
 
-    TagDataManager.translate_filename = filename
-    TagDataManager.load_translate()
+    try:
+        load_data_file("translate_filename", TagDataManager.load_translate, paths.translate_dir, filename)
+    except ValueError as error:
+        return web.json_response({"error": str(error)}, status=400)
 
     return web.json_response({"status": "success"})
 
