@@ -1,7 +1,7 @@
 [project]
 name = "ComfyUI-TagForge"
 description = "Tag completion with a1111-style wildcard sub-selection, CSV database support (Danbooru, e621), multiple wildcard sources, and smart parsing for professional prompt engineering in ComfyUI."
-version = "2.1.2"
+version = "2.1.3"
 license = {file = "LICENSE"}
 dependencies = []
 
