@@ -12,6 +12,7 @@ const WIDGET_NAMES = {
     deduplicate: "deduplicate",
     downvoteFactor: "downvote_factor",
     mode: "mode",
+    baseModel: "base_model",
 };
 
 const WILDCARD_MODE_PROP = "tagforge_wildcard_mode";
@@ -139,6 +140,7 @@ async function prepareWildcardNodes(appRef, _queueNodeIds) {
             WIDGET_NAMES.populatedText
         );
         const dedupWidget = getWidgetByName(node, WIDGET_NAMES.deduplicate);
+        const baseModelWidget = getWidgetByName(node, WIDGET_NAMES.baseModel);
         const factorWidget = getWidgetByName(
             node,
             WIDGET_NAMES.downvoteFactor
@@ -165,6 +167,7 @@ async function prepareWildcardNodes(appRef, _queueNodeIds) {
             populated_text: populatedTextWidget?.value ?? "",
             deduplicate: dedupWidget?.value ?? true,
             downvote_factor: factorWidget?.value ?? 0.5,
+            base_model: baseModelWidget?.value ?? "Pony",
             mode,
         };
 

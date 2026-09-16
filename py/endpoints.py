@@ -154,6 +154,9 @@ async def wildcard_process(req: web.Request):
     text = data.get("text", "")
     populated_text = data.get("populated_text", "")
     mode = data.get("mode", "populate")
+    base_model = data.get("base_model", "Pony")
+    if base_model not in WildcardProcessorNode.MODEL_PRESETS:
+        return web.json_response({"error": "base_model must be Pony or Illustrious"}, status=400)
     if not isinstance(text, str):
         return web.json_response({"error": "text must be a string"}, status=400)
     try:
@@ -164,14 +167,16 @@ async def wildcard_process(req: web.Request):
     if not 0.0 < factor <= 1.0:
         return web.json_response({"error": "downvote_factor must be greater than 0 and at most 1"}, status=400)
     if mode == "fixed":
-        return web.json_response({"processed_text": populated_text, "text": populated_text, "seed": seed})
+        positive, negative = WildcardProcessorNode.apply_model_preset(populated_text, base_model)
+        return web.json_response({"processed_text": positive, "text": positive, "negative": negative, "seed": seed})
     source = populated_text if mode == "reproduce" else text
     if seed == 0:
         import secrets
         seed = secrets.randbits(64)
     usage = WildcardProcessorNode._session_usage if data.get("deduplicate", True) and factor < 1.0 else None
     processed = WildcardLoader.process(source, seed, usage, factor)
-    return web.json_response({"processed_text": processed, "text": processed, "seed": seed})
+    positive, negative = WildcardProcessorNode.apply_model_preset(processed, base_model)
+    return web.json_response({"processed_text": positive, "text": positive, "negative": negative, "seed": seed})
 
 
 @Endpoint.post("tagcomplete/wildcards/refresh")

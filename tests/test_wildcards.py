@@ -87,6 +87,26 @@ class WildcardTests(unittest.TestCase):
         self.assertEqual(self.loader.process("__lazy__", 1), "value")
         self.assertEqual(self.loader.get_status()["loaded_count"], 1)
 
+    def test_model_presets_replace_existing_prefix_and_return_negative(self):
+        comfy = types.ModuleType("comfy")
+        comfy_types = types.ModuleType("comfy.comfy_types")
+        comfy_types.IO = types.SimpleNamespace(STRING="STRING", INT="INT", BOOLEAN="BOOLEAN", FLOAT="FLOAT")
+        comfy_types.InputTypeDict = dict
+        sys.modules["comfy"] = comfy
+        sys.modules["comfy.comfy_types"] = comfy_types
+        source = Path(__file__).parents[1] / "py" / "wildcard_processor.py"
+        spec = importlib.util.spec_from_file_location("tagforge_py.wildcard_processor", source)
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[spec.name] = module
+        spec.loader.exec_module(module)
+
+        pony_prefix = module.WildcardProcessorNode.MODEL_PRESETS["Pony"]["positive"]
+        positive, negative = module.WildcardProcessorNode.apply_model_preset(f"{pony_prefix}, 1girl", "Illustrious")
+        self.assertEqual(positive, f'{module.WildcardProcessorNode.MODEL_PRESETS["Illustrious"]["positive"]}, 1girl')
+        self.assertEqual(negative, module.WildcardProcessorNode.MODEL_PRESETS["Illustrious"]["negative"])
+        self.assertEqual(module.WildcardProcessorNode.RETURN_NAMES, ("processed_text", "negative"))
+        self.assertIn("base_model", module.WildcardProcessorNode.INPUT_TYPES()["optional"])
+
 
 if __name__ == "__main__":
     unittest.main()
