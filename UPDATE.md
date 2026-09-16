@@ -1,6 +1,22 @@
 # Changelog
 
-All notable changes to ComfyUI-TagComplete will be documented in this file.
+All notable changes to ComfyUI-TagForge will be documented in this file.
+
+## [2.2.0] - 2026-09-16
+
+### Model-Aware Prompt Presets
+
+- Added a `base_model` dropdown to `WildcardProcessor` with `Pony` and `Illustrious` options.
+- Added automatic model-specific quality tags at the beginning of the processed positive prompt.
+- Added a second `negative` output with the negative prompt selected for the active model family.
+- Added Pony defaults for score tags and Pony-oriented negative quality tags.
+- Added Illustrious defaults for quality tags, adult prompting, and Illustrious-oriented negative quality tags.
+- Existing Pony or Illustrious prefixes are replaced instead of duplicated when switching model families.
+- Preserved `processed_text` as the first output and appended the dropdown after existing widgets for workflow compatibility.
+- Updated browser-side pre-queue wildcard processing and the wildcard API endpoint to honor the selected model family.
+- Added regression coverage for prefix replacement, negative output selection, output ordering, and input availability.
+
+---
 
 ## [2.0.0] - 2025-02-14
 
