@@ -156,7 +156,8 @@ async def wildcard_process(req: web.Request):
     mode = data.get("mode", "populate")
     base_model = data.get("base_model", "Pony")
     if base_model not in WildcardProcessorNode.MODEL_PRESETS:
-        return web.json_response({"error": "base_model must be Pony or Illustrious"}, status=400)
+        allowed = ", ".join(WildcardProcessorNode.MODEL_PRESETS)
+        return web.json_response({"error": f"base_model must be one of: {allowed}"}, status=400)
     if not isinstance(text, str):
         return web.json_response({"error": "text must be a string"}, status=400)
     try:

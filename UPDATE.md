@@ -2,6 +2,14 @@
 
 All notable changes to ComfyUI-TagForge will be documented in this file.
 
+## [2.2.1] - 2026-09-16
+
+### None Base-Model Option
+
+- Added a `None` option to the `base_model` dropdown: the positive prompt is returned without any quality-tag prefix and the negative output is empty.
+- Switching to `None` also strips a previously applied Pony or Illustrious prefix from the text.
+- `Pony` remains the default for new nodes, preserving existing workflow behavior.
+
 ## [2.2.0] - 2026-09-16
 
 ### Model-Aware Prompt Presets

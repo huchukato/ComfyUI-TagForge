@@ -8,6 +8,10 @@ from .wildcards import WildcardLoader
 class WildcardProcessorNode:
     _session_usage: dict[str, dict[str, int]] = {}
     MODEL_PRESETS = {
+        "None": {
+            "positive": "",
+            "negative": "",
+        },
         "Pony": {
             "positive": "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle",
             "negative": "score_6, score_5, score_4, worst quality, low quality, ugly, malformed, bad anatomy, grayscale, watermark",
@@ -52,13 +56,15 @@ class WildcardProcessorNode:
         content = (text or "").strip().lstrip(", ")
         for candidate in cls.MODEL_PRESETS.values():
             prefix = candidate["positive"]
+            if not prefix:
+                continue
             if content == prefix:
                 content = ""
                 break
             if content.startswith(f"{prefix},"):
                 content = content[len(prefix) + 1:].lstrip()
                 break
-        positive = f'{preset["positive"]}, {content}' if content else preset["positive"]
+        positive = ", ".join(part for part in (preset["positive"], content) if part)
         return positive, preset["negative"]
 
     def process_wildcards(self, text, seed=0, populated_text="", mode="populate",

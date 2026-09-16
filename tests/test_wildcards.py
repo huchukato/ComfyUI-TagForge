@@ -104,8 +104,15 @@ class WildcardTests(unittest.TestCase):
         positive, negative = module.WildcardProcessorNode.apply_model_preset(f"{pony_prefix}, 1girl", "Illustrious")
         self.assertEqual(positive, f'{module.WildcardProcessorNode.MODEL_PRESETS["Illustrious"]["positive"]}, 1girl')
         self.assertEqual(negative, module.WildcardProcessorNode.MODEL_PRESETS["Illustrious"]["negative"])
+        positive, negative = module.WildcardProcessorNode.apply_model_preset("1girl, solo", "None")
+        self.assertEqual((positive, negative), ("1girl, solo", ""))
+        positive, negative = module.WildcardProcessorNode.apply_model_preset(f"{pony_prefix}, 1girl", "None")
+        self.assertEqual((positive, negative), ("1girl", ""))
+        positive, negative = module.WildcardProcessorNode.apply_model_preset("", "None")
+        self.assertEqual((positive, negative), ("", ""))
         self.assertEqual(module.WildcardProcessorNode.RETURN_NAMES, ("processed_text", "negative"))
-        self.assertIn("base_model", module.WildcardProcessorNode.INPUT_TYPES()["optional"])
+        options = module.WildcardProcessorNode.INPUT_TYPES()["optional"]["base_model"][0]
+        self.assertEqual(options, ["None", "Pony", "Illustrious"])
 
 
 if __name__ == "__main__":
