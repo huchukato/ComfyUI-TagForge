@@ -71,3 +71,19 @@ qwen21:
     * High resolution and highly detailed.
     * Maintain absolute character consistency across the entire sheet.
     * Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.
+  styles:
+    - "[photorealistic] Render the scene as a convincing high-end photograph with anatomically natural subjects, realistic skin and fabric texture, soft directional daylight, accurate reflections, subtle depth of field, and balanced cinematic color grading."
+    - "[photorealistic] Render the scene as a candid documentary photograph taken with a 35mm lens, using authentic available light, natural proportions, fine environmental detail, restrained contrast, and subtle analog film grain."
+    - "[photorealistic] Render the scene as a refined medium-format portrait with precise facial detail, realistic pores and individual hair strands, smooth tonal transitions, soft highlight roll-off, creamy background separation, and an elegant editorial finish."
+    - "[photorealistic] Render the scene as an atmospheric analog snapshot with warm film-stock colors, visible fine grain, gentle halation around highlights, slightly faded tones, a soft vignette, and spontaneous framing."
+    - "[anime] Render the scene as a polished anime key visual with expressive character design, clean line art, controlled cel shading, vivid harmonious colors, layered environmental depth, and dramatic cinematic lighting."
+    - "[anime] Render the scene in the style of a 1990s anime OVA, with hand-painted backgrounds, crisp inked contours, traditional cel shading, nostalgic colors, subtle film grain, and dramatic highlights."
+    - "[hentai] Render the scene as an explicit adult anime illustration with clear anatomy and actions, clean line art, polished cel shading, vivid colors, coherent posing, detailed expressions, and cinematic lighting."
+    - "[3dcg] Render the scene as a premium cinematic 3D image with physically based materials, realistic global illumination, refined subsurface scattering, detailed surfaces, accurate reflections, and natural depth of field."
+    - "[cartoon] Render the scene as a lively western cartoon illustration with bold expressive shapes, confident outlines, vivid flat colors, readable silhouettes, playful exaggeration, and dynamic staging."
+    - "[watercolor] Render the scene as a traditional watercolor painting with translucent layered washes, organic pigment blooms, visible cold-pressed paper texture, loose expressive edges, and softly blended colors."
+    - "[cyberpunk] Render the scene as a dense cinematic cyberpunk environment with rain-soaked streets, luminous signs, wet reflective surfaces, layered atmospheric haze, holographic elements, and electric magenta and cyan lighting."
+    - "[noir] Render the scene as a classic black-and-white film-noir image with hard directional lighting, deep sculpted shadows, smoky atmosphere, elegant 1940s framing, strong contrast, and a tense mysterious mood."
+    - "[ghibli] Render the scene as a whimsical hand-painted animated film frame with warm natural colors, lush environmental detail, gentle character acting, soft atmospheric light, and a quiet sense of wonder."
+    - "[manga] Render the scene as a highly finished black-and-white manga illustration with expressive ink work, precise screentone shading, strong value grouping, dynamic perspective, and energetic motion lines."
+    - "[comics] Render the scene as a bold western comic-book illustration with powerful inked outlines, graphic shadow shapes, controlled halftones, vivid color separation, dramatic perspective, and a strong panel composition."
