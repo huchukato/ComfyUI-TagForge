@@ -1,0 +1,73 @@
+# Qwen Image 2.1 editing prompt wildcards.
+# Select a specific edit with __qwen21/<name>__ or a random one with __qwen21/*__.
+# <image1>, <image2>, <image3> refer to the connected reference images.
+qwen21:
+  turnaround: "Full turnaround model sheet of the character in <image1>. Display four distinct full-body and bust views lined up against a neutral light-gray background: (1) full-body front view in neutral A-pose, (2) full-body 90-degree side profile, (3) full-body back view, and (4) close-up headshot/portrait with a neutral expression. Maintain 100% fidelity to the character's facial structure, bone proportions, skin tone, hair color/texture, and costume details from <image1>. Clean studio lighting, high consistency, concept art turnaround, 8k resolution."
+  newscene: "Place the character from <image1> into an atmospheric cyberpunk night market in Neo-Tokyo. Keep the exact facial identity, hair silhouette, and outfit from <image1>, but naturally integrate the character into the new scene. Cast vibrant magenta and teal volumetric neon light across their face and clothing, with wet asphalt reflections below and crowded food stalls in the soft-focus background. cinematic depth of field, natural ambient lighting integration."
+  faceswap: "Swap the face in <image2> with the exact facial identity of the subject in <image1>. Preserve the face structure, eyes, nose, lips, micro-textures, and unique features from <image1>, but adapt them seamlessly to the head tilt, neck connection, skin color temperature, shadow falls, and directional lighting of <image2>. Keep the hair, ears, body, and background of <image2> completely unchanged. Seamless edge blending, no seam artifacts."
+  headswap: "Replace the entire head and hair of the subject in <image2> with the head, facial identity, facial hair, and hairstyle of the person in <image1>. Retain the exact skull geometry, hairline, and facial expression from <image1>. Blend smoothly at the neckline and collar of <image2>, recalculating ambient occlusion and specular highlights so the hair and skin match the directional lighting and environmental reflections of <image2>."
+  outfit: "Keep the person's face, hair, body posture, and background in <image1> completely identical, but replace their clothes with the exact outfit in <image2>. Tailor the outfit from <image2> naturally to their posture, with physically accurate drape, realistic creases at the elbows, and natural collar contact along the neckline."
+  multiref: "Compose a cohesive cinematic scene combining elements from the references: person from <image1> and <image2>, standing together in <image3>. realistic, organically captured photograph."
+  pose: "Regenerate the character from <image1> performing the exact dynamic action pose of the person in <image2>. Maintain every detail of the character's facial likeness, proportions, hair, and current wardrobe from <image1>. Reorient the limbs, torso twist, weight distribution, and hand gestures to mirror <image2> identically, updating fabric folds and wrinkles according to the dynamic movement."
+  expression: "Modify the facial expression of the character in <image1> to match the joyful, wide-laughing expression seen in <image2>. Preserve eye shape, facial geometry, age, skin micro-details, and identity from <image1>. Adjust the mouth, smile lines, squinting eyes, and cheek elevation to reflect authentic happiness, ensuring natural dental anatomy and realistic muscle deformation."
+  background: "Completely replace the background in <image1> with <image2> while fully preserving the subject, pose, facial likeness, and clothing down to the hair strands."
+  timeweather: "Transform the sunny daytime scene in <image1> into a heavy midnight rainstorm. Keep the overall architectural geometry and composition of <image1> intact. Replace the sky with dark storm clouds, wet all exposed surfaces with glossy water sheets and puddles, add falling raindrops motion-blurred by the camera shutter, and illuminate the scene with street lamps reflecting in the flooded pavement."
+  multiedit: "Perform three simultaneous edits on <image1>: (1) Change the subject's current jacket into a distressed brown leather bomber jacket with a shearling collar; (2) Change the daylight scene to golden-hour sunset, casting long warm shadows; (3) Add modern aviator sunglasses with realistic sunset reflections to the subject's face. Keep facial identity, hair, pose, and background architecture completely intact."
+  removeobject: "Remove the red parked car and the fire hydrant from the foreground street in <image1>. Inpaint the vacated area with seamless, photorealistic cobblestone pavement and continuation of the sidewalk curb. Maintain original texture continuity, shadow gradients, surface stains, and perspective vanishing lines. No blur, clone stamps, or artifacts."
+  insertobject: "Insert an authentic vintage Polaroid camera resting naturally on the wooden coffee table in <image1>, placed slightly to the right of the coffee mug. Match the existing scene's focal length, depth of field, surface contact shadows, warm tungsten lighting, and slight film grain. The camera should look as though it was physically present during the original capture."
+  textedit: "In <image1>, edit the headline text that reads \"SUMMER FESTIVAL\" to read \"WINTER SOLSTICE\". Replicate the exact typography, custom geometric font, 3D beveling, drop shadow, metallic gold foil texture, and perspective angle of the original lettering. Keep the surrounding graphic elements, background art, and secondary text completely untouched."
+  novelview: "Based on the frontal portrait of the character in <image1>, generate a photorealistic three-quarter rear camera angle (viewed from behind and over the left shoulder, looking slightly back). Extrapolate the unseen back of the hairstyle, rear jacket collar, ear contour, and jawline silhouette while strictly preserving the facial profile and styling established in <image1>."
+  anime2real: "Transform the anime character illustration in <image1> into a photorealistic, real-life human photograph. Translate 2D stylized facial features into anatomically correct human bone structure, genuine human eyes with iris depth, natural skin pores, realistic lips, and individual hair strands. Preserve the character's eye color, hair color/style, clothing design, and recognizable essence from <image1>. RAW photo, 85mm portrait lens, f/1.8."
+  real2anime: "Convert the photographic portrait in <image1> into a premium Korean manhwa/webtoon illustration style. Preserve the recognizable facial proportions, hairstyle, gaze direction, and expression of <image1>. Render with crisp cel-shaded line art, soft gradient skin rendering, expressive stylized eyes with detailed specular highlights, and vibrant digital painting aesthetics typical of high-end manhwa cover art."
+  prosheet: |
+    Create a professional character reference sheet based strictly on <image1>.
+
+    The character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.
+
+    Character consistency:
+    * Preserve the character's exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.
+    * Do not redesign, reinterpret, beautify, or alter the face.
+    * Maintain the exact same person and identity across every panel.
+    * Capture all fine details from both reference images.
+    * Use <image2> whenever it provides additional information or details not clearly visible in <image1>.
+
+    Top section — full-body turnaround:
+    Place three full-body character views across the top:
+    1. Front view
+    2. Side/profile view
+    3. Back view
+    * Same outfit and identical character proportions in all three views.
+    * Use the same neutral standing pose for every view.
+    * Arms slightly separated from the torso so the silhouette and clothing are clearly visible.
+    * Hands relaxed and naturally posed.
+    * Keep the camera height, framing, scale, and perspective consistent between all three views.
+    * No pose drift, proportion drift, outfit changes, or character redesign.
+    * The back view must accurately match the front and side views.
+
+    Bottom section — expressions and props:
+    Use the bottom area for a clean collection of smaller reference panels.
+    Include three facial expression close-ups:
+    * Open mouth
+    * Smiling with teeth visible
+    * Surprised expression
+
+    Right side — large portrait:
+    Place one large, highly detailed shoulder-up portrait of the same person on the right side.
+    * Preserve the exact face and identity from <image1> and <image2>.
+    * Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.
+    * High facial detail and accurate proportions.
+    * Clean, centered composition.
+    * Professional character-sheet presentation.
+    * The portrait must clearly match the face shown in all turnaround views and expression panels.
+
+    Layout and quality:
+    * Clean, professional character-sheet layout.
+    * Clearly separated panels with consistent spacing.
+    * Nothing may overlap, collide, merge, or bleed into another panel.
+    * No element should cross into another frame.
+    * Keep every character, expression, prop, and portrait completely contained within its designated area.
+    * No cropped heads, hands, feet, props, or important clothing details.
+    * Balanced spacing and clear visual hierarchy.
+    * High resolution and highly detailed.
+    * Maintain absolute character consistency across the entire sheet.
+    * Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.
