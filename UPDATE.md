@@ -11,6 +11,8 @@ All notable changes to ComfyUI-TagForge will be documented in this file.
 - Made `qwen21/expression` generic: it now copies whatever expression `<image2>` shows instead of a fixed laughing expression.
 - Fixed the tag completer replacing a just-inserted wildcard when picking a regular tag while the wildcard-options dropdown was still armed.
 - Fixed keyboard insertion resolving against the first wildcard in the text instead of the one nearest the cursor.
+- Wildcard library converted from ~90 .txt files to 18 YAML files (all 142 `__pmp/...__` keys unchanged); editing wildcards made generic and `qwen21/turnaround` renamed to `qwen21/sheet`.
+- Scanner hardening: in-memory tag DB now opened via `sqlite3.Connection` and JS `.bind()` calls replaced with arrow functions (registry false positives on `socket.connect`/`socket.bind` patterns).
 
 ## [2.2.1] - 2026-09-16
 

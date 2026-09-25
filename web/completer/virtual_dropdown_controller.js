@@ -62,12 +62,12 @@ export class VirtualDropdownController {
     // ------------------------------------------
     setupEventListeners() {
         // スクロールイベント
-        this.viewport.addEventListener("scroll", this.handleScroll.bind(this));
+        this.viewport.addEventListener("scroll", (...args) => this.handleScroll(...args));
         
         // ユーザースクロール検出
-        this.viewport.addEventListener("wheel", this.handleWheel.bind(this), { passive: true });
-        this.viewport.addEventListener("touchstart", this.handleTouchStart.bind(this), { passive: true });
-        this.viewport.addEventListener("touchmove", this.handleTouchMove.bind(this), { passive: true });
+        this.viewport.addEventListener("wheel", (...args) => this.handleWheel(...args), { passive: true });
+        this.viewport.addEventListener("touchstart", (...args) => this.handleTouchStart(...args), { passive: true });
+        this.viewport.addEventListener("touchmove", (...args) => this.handleTouchMove(...args), { passive: true });
         
         // マウスイベント
         this.setupDropdownMouseEvents();

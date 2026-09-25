@@ -58,7 +58,7 @@ class TagDataManager:
     # -------------------------------------------
     @classmethod
     def init_db(cls): 
-        cls.conn = sqlite3.connect(':memory:')
+        cls.conn = sqlite3.Connection(':memory:')
         
         # 各テーブル作成
         for table in cls.tables:

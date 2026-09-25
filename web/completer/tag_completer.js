@@ -130,10 +130,10 @@ export class TagCompleter {
     setupEventListeners() {
         // バインドした関数を保存
         this.boundHandlers = {
-            keydown: this.handleKeyDown.bind(this), 
-            input: this.handleInput.bind(this), 
-            click: this.handleClick.bind(this), 
-            blur: this.handleBlur.bind(this)
+            keydown: (...args) => this.handleKeyDown(...args), 
+            input: (...args) => this.handleInput(...args), 
+            click: (...args) => this.handleClick(...args), 
+            blur: (...args) => this.handleBlur(...args)
         };
 
         this.element.addEventListener("keydown", this.boundHandlers.keydown);

@@ -214,7 +214,7 @@ export function installQueueHook(appRef) {
     if (queueHookInstalled || !appRef?.queuePrompt) return;
     queueHookInstalled = true;
 
-    const originalQueuePrompt = appRef.queuePrompt.bind(appRef);
+    const originalQueuePrompt = (...args) => appRef.queuePrompt(...args);
     appRef.queuePrompt = async function queuePrompt_wrapper(...args) {
         const queueNodeIds = args[2];
         try {
