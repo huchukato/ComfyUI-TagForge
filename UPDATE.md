@@ -2,6 +2,13 @@
 
 All notable changes to ComfyUI-TagForge will be documented in this file.
 
+## [2.2.6] - 2026-09-25
+
+- Fixed tag completer inside subgraphs: promoted widgets don't go through the `ComfyWidgets.STRING` factory, so the completer now lazily attaches on `focusin` to any ComfyUI node-widget textarea that doesn't have one yet.
+- Settings panel cleanup: the extension now registers as "TagForge" instead of the `jupo.TagForge.TagCompleter` namespaced id, and every setting declares `category: ["TagForge"]` so the sidebar groups them under "TagForge" instead of "jupo" (existing `jupo.TagForge.*` setting ids and endpoint paths are unchanged).
+- Added emojis: `⚒️ TagForge` category in the node menu and `🃏 Wildcard Processor` display name.
+- New banner and icon.
+
 ## [2.2.5] - 2026-09-25
 
 - Fixed infinite loop on queue: the queuePrompt hook re-captured the wrapped function instead of the original, recursing forever and re-running wildcard expansion.
