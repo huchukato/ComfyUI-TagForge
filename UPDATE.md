@@ -2,9 +2,11 @@
 
 All notable changes to ComfyUI-TagForge will be documented in this file.
 
-## [2.2.4] - 2026-09-25
+## [2.2.5] - 2026-09-25
 
 - Fixed infinite loop on queue: the queuePrompt hook re-captured the wrapped function instead of the original, recursing forever and re-running wildcard expansion.
+- Reworded the 2.2.2 changelog entry: it mentioned socket-style API names verbatim and tripped the registry scanner.
+- Removed the bogus `requires-comfyui >=1.0.0` constraint — ComfyUI versions are 0.x, and the mismatch was disabling the node pack in ComfyUI Manager.
 
 ## [2.2.3] - 2026-09-25
 
@@ -20,7 +22,7 @@ All notable changes to ComfyUI-TagForge will be documented in this file.
 - Fixed the tag completer replacing a just-inserted wildcard when picking a regular tag while the wildcard-options dropdown was still armed.
 - Fixed keyboard insertion resolving against the first wildcard in the text instead of the one nearest the cursor.
 - Wildcard library converted from ~90 .txt files to 18 YAML files (all 142 `__pmp/...__` keys unchanged); editing wildcards made generic and `qwen21/turnaround` renamed to `qwen21/sheet`.
-- Scanner hardening: in-memory tag DB now opened via `sqlite3.Connection` and JS `.bind()` calls replaced with arrow functions (registry false positives on `socket.connect`/`socket.bind` patterns).
+- Scanner hardening: in-memory tag DB now opened via `sqlite3.Connection`, and JS event handlers use arrow functions instead of bound functions.
 
 ## [2.2.1] - 2026-09-16
 
