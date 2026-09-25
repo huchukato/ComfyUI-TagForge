@@ -2,6 +2,10 @@
 
 All notable changes to ComfyUI-TagForge will be documented in this file.
 
+## [2.2.7] - 2026-09-25
+
+- Wildcards now self-update on every ComfyUI start: the bundled `pmp/*` yaml files are synced from the Garage repo (the source of truth) in a background thread, so prompt fixes ship without a node release or pod rebuild. Files identical to upstream are skipped; the loader cache is refreshed if anything changed.
+
 ## [2.2.6] - 2026-09-25
 
 - Fixed tag completer inside subgraphs: promoted widgets don't go through the `ComfyWidgets.STRING` factory, so the completer now lazily attaches on `focusin` to any ComfyUI node-widget textarea that doesn't have one yet.
