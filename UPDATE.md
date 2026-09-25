@@ -2,6 +2,16 @@
 
 All notable changes to ComfyUI-TagForge will be documented in this file.
 
+## [2.2.2] - 2026-09-18
+
+### Wildcard Library & Completer Fixes
+
+- Added `qwen21/eyeswap` and `qwen21/hairswap` editing wildcards: eyes and hair transfer from `<image1>` onto `<image2>`, consistent with the face/head swap conventions.
+- Reworked `qwen21/faceswap` so only facial features inside the hairline transfer from `<image1>` — the target's hairstyle, hairline, ears, head silhouette, body, clothing, and background stay unchanged, avoiding unwanted head swaps.
+- Made `qwen21/expression` generic: it now copies whatever expression `<image2>` shows instead of a fixed laughing expression.
+- Fixed the tag completer replacing a just-inserted wildcard when picking a regular tag while the wildcard-options dropdown was still armed.
+- Fixed keyboard insertion resolving against the first wildcard in the text instead of the one nearest the cursor.
+
 ## [2.2.1] - 2026-09-16
 
 ### None Base-Model Option

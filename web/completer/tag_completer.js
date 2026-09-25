@@ -244,23 +244,31 @@ export class TagCompleter {
 
         // Se siamo in modalità wildcard opzioni, inserisci l'opzione sostituendo la wildcard
         if (this.isInWildcardMode) {
+            // Se il risultato cliccato non è un'opzione della wildcard (es. un tag
+            // normale cercato dopo l'inserimento), esci dalla modalità e procedi
+            // con l'inserimento normale: la wildcard non va toccata.
+            if (!result.isWildcardOption) {
+                this.isInWildcardMode = false;
+                this.originalWildcardResult = null;
+                this.originalSearchInfo = null;
+            } else {
             this.element.focus();
 
             // Cerca la wildcard nell'intero testo del campo
             const fullText = this.element.value;
             const cursorPos = this.element.selectionStart;
-            
+
             // Cerca la wildcard più vicina al cursore
-            const wildcardRegex = /__(.+?)__/g;
+            const wildcardRegex = /__([\w.\-+/*\\]+?)__/g;
             let match;
             let closestMatch = null;
             let closestDistance = Infinity;
-            
+
             while ((match = wildcardRegex.exec(fullText)) !== null) {
                 const matchStart = match.index;
                 const matchEnd = matchStart + match[0].length;
                 const distance = Math.abs(cursorPos - matchEnd);
-                
+
                 if (distance < closestDistance) {
                     closestDistance = distance;
                     closestMatch = {
@@ -270,7 +278,7 @@ export class TagCompleter {
                     };
                 }
             }
-            
+
             if (closestMatch) {
                 // Seleziona la wildcard e sostituiscila
                 this.element.selectionStart = closestMatch.start;
@@ -287,6 +295,7 @@ export class TagCompleter {
                 setTimeout(() => this.dropdownController.hide(), 150);
             }
             return;
+            }
         }
 
         // Comportamento normale per tag normali
@@ -327,7 +336,8 @@ export class TagCompleter {
             categoryName: "Wildcard",
             site: null,
             translate: null,
-            wildcardValue: null
+            wildcardValue: null,
+            isWildcardOption: true
         }));
 
         // Mostra le opzioni
@@ -410,7 +420,7 @@ export class TagCompleter {
         // Se siamo in modalità wildcard opzioni, gestiamo direttamente l'inserimento
         if (this.isInWildcardMode) {
             const result = this.dropdownController.getCurrentResults()[this.dropdownController.getCurrentIndex()];
-            if (result) {
+            if (result && result.isWildcardOption) {
                 this.element.focus();
 
                 if (this.termCursorPostion) {
@@ -421,21 +431,22 @@ export class TagCompleter {
                 // Trova la wildcard nel testo e sostituiscila con l'opzione
                 const beforeCursor = this.helper.getBeforeCursor();
                 const afterCursor = this.helper.getAfterCursor();
-                
-                // Cerca la wildcard che abbiamo appena inserito
-                const wildcardMatch = beforeCursor.match(/__([\w.\-+/*\\]+?)__/);
+
+                // Cerca la wildcard più vicina al cursore (l'ultima prima di esso)
+                const matches = beforeCursor ? [...beforeCursor.matchAll(/__([\w.\-+/*\\]+?)__/g)] : [];
+                const wildcardMatch = matches.length ? matches[matches.length - 1] : null;
                 if (wildcardMatch) {
                     const wildcardText = wildcardMatch[0];
                     const startPos = beforeCursor.lastIndexOf(wildcardText);
                     const endPos = startPos + wildcardText.length;
-                    
+
                     this.element.selectionStart = startPos;
                     this.element.selectionEnd = endPos;
-                    
+
                     // Inserisci l'opzione
                     this.helper.insertAtCursor(result.value, wildcardText.length);
                     setTimeout(() => this.dropdownController.hide(), 150);
-                    
+
                     // Resetta la modalità wildcard
                     this.isInWildcardMode = false;
                     this.originalWildcardResult = null;
@@ -447,6 +458,13 @@ export class TagCompleter {
                     this.helper.insertAtCursor(insertValue, replaceLength);
                     setTimeout(() => this.dropdownController.hide(), 150);
                 }
+            } else {
+                // Risultato non-wildcard (tag normale cercato dopo l'inserimento):
+                // esci dalla modalità e inserisci come tag normale
+                this.isInWildcardMode = false;
+                this.originalWildcardResult = null;
+                this.originalSearchInfo = null;
+                selectedItem.click();
             }
         } else {
             // Comportamento normale per non-wildcard
