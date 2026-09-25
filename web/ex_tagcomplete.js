@@ -73,7 +73,8 @@ function hijackSTRING() {
 // エクステンションの定義
 // ==============================================
 const extension = {
-    name: mk_name("TagCompleter"),
+    // Visible in the ComfyUI settings panel header — keep it clean.
+    name: "TagForge",
 
     // ------------------------------------------
     // 設定
