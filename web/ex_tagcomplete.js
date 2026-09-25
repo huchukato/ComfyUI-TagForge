@@ -1,6 +1,6 @@
 import { app } from "../../scripts/app.js";
 import { ComfyWidgets } from "../../scripts/widgets.js";
-import { mk_name, findTextareaFromWidget } from "./utils.js";
+import { findTextareaFromWidget } from "./utils.js";
 import { settings } from "./settings.js";
 import { TagCompleter } from "./completer/tag_completer.js";
 import {
