@@ -2,6 +2,10 @@
 
 All notable changes to ComfyUI-TagForge will be documented in this file.
 
+## [2.2.3] - 2026-09-25
+
+- Removed the bogus `requires-comfyui >=1.0.0` constraint — ComfyUI versions are 0.x, and the mismatch was disabling the node pack in ComfyUI Manager.
+
 ## [2.2.2] - 2026-09-18
 
 ### Wildcard Library & Completer Fixes
