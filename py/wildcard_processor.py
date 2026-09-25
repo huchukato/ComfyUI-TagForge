@@ -48,7 +48,7 @@ class WildcardProcessorNode:
     RETURN_TYPES = (IO.STRING, IO.STRING)
     RETURN_NAMES = ("processed_text", "negative")
     FUNCTION = "process_wildcards"
-    CATEGORY = "TagForge"
+    CATEGORY = "⚒️ TagForge"
 
     @classmethod
     def apply_model_preset(cls, text, base_model="Pony"):
