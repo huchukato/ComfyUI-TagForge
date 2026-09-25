@@ -10,6 +10,31 @@ import {
 } from "./wildcard_processor.js";
 
 // ==============================================
+// コンプリーターの管理
+// ==============================================
+const completerAttached = new WeakSet();
+
+function attachCompleter(el) {
+    if (!el || completerAttached.has(el)) return;
+    completerAttached.add(el);
+    new TagCompleter(el);
+}
+
+// Lazy attach for textareas the STRING factory never sees (promoted subgraph
+// widgets, recreated DOM widgets, ...). Fires on focus, once per element.
+function installLazyAttach() {
+    document.addEventListener("focusin", (event) => {
+        const el = event.target;
+        if (!(el instanceof HTMLTextAreaElement) || completerAttached.has(el)) return;
+        // Only ComfyUI node-widget textareas; skip unrelated inputs (e.g. chat sidebars).
+        const isWidget = el.classList.contains("comfy-multiline-input")
+            || !!el.closest(".lg_domwidget, .comfyui-dom-widget, .dom-widget, .litegraph, #graph-canvas, .graph-canvas-container, [class*='dom-widget'], [class*='DomWidget']");
+        if (!isWidget) return;
+        attachCompleter(el);
+    });
+}
+
+// ==============================================
 // STRINGウィジェットのハイジャック
 // ==============================================
 function hijackSTRING() {
@@ -35,7 +60,7 @@ function hijackSTRING() {
 
             const textarea = findTextareaFromWidget(res?.widget);
             if (textarea) {
-                new TagCompleter(textarea);
+                attachCompleter(textarea);
             }
         }
 
@@ -60,6 +85,7 @@ const extension = {
     // ------------------------------------------
     init: async function(app) {
         hijackSTRING();
+        installLazyAttach();
         installQueueHook(app);
     },
 
