@@ -1,0 +1,377 @@
+pmp:
+  prmpt:
+    hair:
+      fronth:
+      - bangs
+      - arched bangs
+      - asymmetrical bangs
+      - bangs pinned back
+      - blunt bangs
+      - braided bangs
+      - crossed bangs
+      - choppy bangs
+      - diagonal bangs
+      - dyed bangs
+      - fanged bangs
+      - hair over eyes
+      - hair over one eye
+      - long bangs
+      - parted bangs
+      - curtained hair
+      - wispy bangs
+      - short bangs
+      - swept bangs
+      - hair between eyes
+      - hair intakes
+      - single hair intake
+      - sidelocks
+      - asymmetrical sidelocks
+      - drill sidelocks
+      - low-tied sidelocks
+      - sidelocks tied back
+      - single sidelock
+      - widow's peak
+      h_text:
+      - curly hair
+      - drill hair
+      - twin drills
+      - tri drills
+      - hair flaps
+      - messy hair
+      - pointy hair
+      - ringlets
+      - spiked hair
+      - straight hair
+      - wavy hair
+      hairLength:
+      - very short hair
+      - short hair
+      - medium hair
+      - long hair
+      - very long hair
+      - absurdly long hair
+      - big hair
+      - bald
+      hairMisc:
+      - hair down
+      - hair up
+      - asymmetrical hair
+      - sidecut
+      - floating hair
+      - hair spread out
+      - wet hair
+      - hair brush
+      - hair dryer
+      - shampoo
+      hairTexture:
+      - blunt ends
+      - curly hair
+      - drill hair
+      - twin drills
+      - flipped hair
+      - hair flaps
+      - messy hair
+      - pointy hair
+      - spiky hair
+      - straight hair
+      - ringlets
+      - wavy hair
+      hair_l:
+      - very short hair
+      - short hair
+      - medium hair
+      - long hair
+      - very long hair
+      - absurdly long hair
+      - big hair
+      - bald
+      - bald girl
+      haircolor:
+      - aqua hair
+      - black hair
+      - blonde hair
+      - platinum blone hair
+      - sandy blonde hair
+      - light brown hair
+      - green hair
+      - dark green hair
+      - light green hair
+      - grey hair
+      - orange hair
+      - strawberry blonde hair
+      - blue hair
+      - dark blue hair
+      - light blue hair
+      - brown hair
+      - dark brown hair
+      - pink hair
+      - purple hair
+      - dark purple hair
+      - lavender hair
+      - light purple hair
+      - red hair
+      - maroon hair
+      - silver hair
+      - white hair
+      haircolormix:
+      - colored inner hair
+      - colored tips
+      - gradient hair
+      - highlights
+      - rainbow hair
+      hairstyles:
+      - afro hair
+      - natural hair
+      - asymmetric cut hair
+      - beehive hairdo
+      - bettie page hair
+      - big hair
+      - blow out hair
+      - blunt cut hair
+      - bob cut hair
+      - bouffant hair
+      - bow-shaped hair
+      - bowl cut hair
+      - braided hair
+      - braided bangs
+      - braided bun
+      - brush cut hair
+      - bunches hair
+      - burr hair
+      - business-man cut hair
+      - butch cut hair
+      - buzz cut hair
+      - caesar cut hair
+      - chignon hair
+      - chonmage hair
+      - comb over hair
+      - cone hair bun
+      - conk hair
+      - cornrows hair
+      - crew cut hair
+      - cropped hair
+      - crown braid hair
+      - croydon facelift hair
+      - curtained hair
+      - devilock hair
+      - dice bob hair
+      - dido flip hair
+      - double bun hair
+      - doughnut hair bun
+      - dreadlocks
+      - duck's ass hair
+      - eton crop hair
+      - emo hair
+      - fade hair
+      - fallera hair
+      - fauxhawk
+      - feathered hair
+      - finger wave hair
+      - fishtail hair
+      - flattop hair
+      - flipped hair
+      - folded ponytail
+      - fontange hair
+      - french braid hair
+      - french twist hair
+      - fringe hair
+      - frizzy hair
+      - front braid
+      - front ponytail
+      - frosted tips hair
+      - full crown hair
+      - g.i. haircut
+      - hair bun
+      - hair extensions
+      - half crown hair
+      - half updo hair
+      - half up hair
+      - half down hair
+      - harvard clip hair
+      - heart hair bun
+      - high and tight hair
+      - high ponytail
+      - highlights hair
+      - hime cut hair
+      - hi-top fade hair
+      - huge afro
+      - induction cut hair
+      - ivy league hair
+      - jewfro
+      - jheri curl
+      - layered hair
+      - liberty spikes hair
+      - line up hair
+      - long hair
+      - low-braided long hair
+      - low-tied long hair
+      - low twin braids
+      - low twintails hair
+      - marcelling hair
+      - mizura hair
+      - mod cut hair
+      - mohawk
+      - mop-top hair
+      - mullet
+      - multi-tied hair
+      - multiple braids
+      - nihongami hair
+      - odango hair
+      - okappa hair
+      - one side up hair
+      - oseledets hair
+      - pageboy hair
+      - parted hair
+      - payot hair
+      - perm hair
+      - pigtails hair
+      - pixie cut
+      - pompadour
+      - ponyhawk hair
+      - ponytail hair
+      - princeton hair
+      - professional cut hair
+      - psychobilly wedge hair
+      - quad braids
+      - quad tails hair
+      - queue hair
+      - quiff hair
+      - quin tails hair
+      - the rachel hair
+      - rattail hair
+      - razor cut hair
+      - recon hair
+      - regular haircut
+      - regular taper cut hair
+      - ringlets hair
+      - shag hair
+      - shape-up hair
+      - shingle bob hair
+      - side ponytail
+      - short back and sides hair
+      - short brush cut hair
+      - short hair
+      - short ponytail
+      - short twintails hair
+      - shouten pegasus mix mori hair
+      - side braid
+      - single braid
+      - single hair bun
+      - slicked-back hair
+      - spiky hair
+      - split ponytail
+      - standard haircut
+      - surfer hair
+      - taper cut hair
+      - tail on back hair
+      - tonsure hair
+      - topknot hair
+      - tri braids
+      - tri tails hair
+      - triple bun hair
+      - twin braids
+      - twintails hair
+      - two side up hair
+      - undercut hair
+      - updo hair
+      - uneven twintails hair
+      - wavy hair
+      hcol:
+      - ash blonde
+      - ash brown
+      - auburn
+      - black
+      - blonde
+      - brown
+      - burgundy
+      - chestnut
+      - chocolate
+      - copper
+      - dark blonde
+      - dark brown
+      - dark red
+      - dirty blonde
+      - honey blonde
+      - light blonde
+      - light brown
+      - medium blonde
+      - medium brown
+      - natural blonde
+      - platinum blonde
+      - red
+      longh_cut:
+      - hime cut
+      - mullet
+      mediumh_cut:
+      - flipped hair
+      - wolf cut
+      shorth_cut:
+      - bob cut
+      - inverted bob
+      - bowl cut
+      - buzz cut
+      - chonmage
+      - crew cut
+      - flattop
+      - okappa
+      - pixie cut
+      - undercut
+      tiedh_cut:
+      - bantu knots
+      - bow-shaped hair
+      - shuangyaji
+      - braid
+      - braided bangs
+      - front braid
+      - side braid
+      - french braid
+      - cornrows
+      - crown braid
+      - dreadlocks
+      - single braid
+      - multiple braids
+      - twin braids
+      - low twin braids
+      - tri braids
+      - quad braids
+      - flower-shaped hair
+      - hair bun
+      - braided bun
+      - single hair bun
+      - double bun
+      - cone hair bun
+      - donut hair bun
+      - heart hair bun
+      - triple bun
+      - cone hair bun
+      - hair rings
+      - feixianji
+      - katsuyamamage
+      - single hair ring
+      - half updo
+      - half up braid
+      - half up half down braid
+      - one side up
+      - two side up
+      - low-braided long hair
+      - low-tied long hair
+      - mizura
+      - multi-tied hair
+      - nihongami
+      - ponytail
+      - folded ponytail
+      - front ponytail
+      - high ponytail
+      - short ponytail
+      - side ponytail
+      - split ponytail
+      - star-shaped hair
+      - topknot
+      - twintails
+      - low twintails
+      - short twintails
+      - uneven twintails
+      - tri tails
+      - quad tails
+      - quin tails
+      - twisted hair

@@ -1,0 +1,301 @@
+pmp:
+  prmpt:
+    imgcmp:
+      cmpstn:
+      - afterimage
+      - border
+      - fading border
+      - inset border
+      - ornate border
+      - outside border
+      - rounded corners
+      - viewfinder
+      - chart
+      - bust chart
+      - character chart
+      - reference sheet
+      - diagram
+      - move chart
+      - relationship graph
+      - seating chart
+      - stats
+      - collage
+      - column lineup
+      - out of frame
+      - fake scrollbar
+      - feet out of frame
+      - foot out of frame
+      - head out of frame
+      - knees out of frame
+      - out-of-frame censoring
+      - outside border
+      - from outside
+      - glitch
+      - isometric
+      - letterboxed
+      - pillarboxed
+      - lineup
+      - mosaic art
+      - photomosaic
+      - negative space
+      - omake
+      - partially underwater shot
+      - POV
+      - social media composition
+      - symmetry
+      - polar opposites
+      - rotational symmetry
+      - tachi-e
+      - trim marks
+      - zoom layer
+      - projected inset
+      cropped:
+      - split crop
+      - cropped legs
+      - cropped torso
+      - cropped arms
+      - cropped shoulders
+      - cropped head
+      - profile
+      - group profile
+      dpth:
+      - atmospheric perspective
+      - fisheye
+      - panorama
+      - perspective
+      - vanishing point
+      - depth of field
+      fcs:
+      - animal focus
+      - armpit focus
+      - ass focus
+      - back focus
+      - book focus
+      - breast focus
+      - cloud focus
+      - eye focus
+      - food focus
+      - foot focus
+      - hand focus
+      - hip focus
+      - male focus
+      - monster focus
+      - navel focus
+      - object focus
+      - other focus
+      - plant focus
+      - pectoral focus
+      - penis focus
+      - solo focus
+      - vehicle focus
+      - text focus
+      - thigh focus
+      - weapon focus
+      - vehicle focus
+      - wind chime focus
+      flws:
+      - Artifacts
+      - GIF artifacts
+      - JPEG artifacts
+      - adversarial noise
+      - aliasing
+      - scan artifacts
+      - bleed through
+      - crease
+      - VHS artifacts
+      - bad aspect ratio
+      - blurry
+      - censored
+      - uncensored
+      - decensored
+      - derivative work
+      - photo-referenced
+      - reference photo
+      - reference work
+      - screenshot redraw
+      - duplicate
+      - pixel-perfect duplicate
+      - artistic error
+      - bad reflection
+      - extra digits
+      - typo
+      - lossless-lossy
+      - lossy-lossless
+      - image macro
+      - MD5 mismatch
+      - missing thumbnail
+      - moire
+      - third-party edit
+      - detexted
+      - hard-translated
+      - nude filter
+      - poorly drawn
+      - anatomical nonsense
+      - bad anatomy
+      - bad feet
+      - bad hands
+      - bad proportions
+      - quality
+      - ranguage
+      - resized
+      - downscaled
+      - image sample
+      - upscaled
+      - Waifu2x
+      - reversed
+      - rotated
+      - solid color thumbnail
+      - unmoving pattern
+      - watermark
+      - third-party watermark
+      - web address
+      - extraction
+      frmt:
+      - 3D
+      - animated
+      - animated PNG
+      - Flash
+      - video
+      - music video
+      - animated GIF
+      - EasyToon
+      - FlipaClip
+      - non-repeating animation
+      - looping animation
+      - roulette animation
+      - Live2D
+      - anime screenshot
+      - archived file
+      - artbook
+      - calendar (medium)
+      - card (medium)
+      - comic
+      - 1koma
+      - 2koma
+      - 3koma
+      - 4koma
+      - multiple 4koma
+      - 5koma
+      - borderless panels
+      - manga
+      - left-to-right manga
+      - right-to-left comic
+      - silent comic
+      - corrupted file
+      - corrupted Twitter file
+      - cover
+      - album cover
+      - character single
+      - cover page
+      - doujin cover
+      - DVD cover
+      - fake cover
+      - video game cover
+      - magazine cover
+      - manga cover
+      - fake screenshot
+      - fake phone screenshot
+      - game CG
+      - game screenshot
+      - gyotaku (medium)
+      - highres
+      - absurdres
+      - incredibly absurdres
+      - lowres
+      - icon
+      - logo
+      - kirigami
+      - lineart
+      - no lineart
+      - outline
+      - tall image
+      - wide image
+      - mosaic art
+      - photomosaic
+      - oekaki
+      - official art
+      - phonecard
+      - photo
+      - papercraft
+      - paper child
+      - paper cutout
+      - pixel art
+      - postcard
+      - poster
+      - revision
+      - has bad revision
+      - has adversarial noise revision
+      - has artifacted revision
+      - has censored revision
+      - has cropped revision
+      - has downscaled revision
+      - has lossy revision
+      - has watermarked revision
+      - scan
+      - shitajiki
+      - tegaki
+      - transparent background
+      - triptych
+      - Thumbnail collage
+      - vector trace
+      - wallpaper
+      - tileable
+      - wallpaper forced
+      - widescreen
+      - official wallpaper
+      sbjctmttr:
+      - AI-generated
+      - cityscape
+      - everyone
+      - absolutely everyone
+      - group picture
+      - iei
+      - landscape
+      - nature
+      - no humans
+      - off-topic
+      - scenery
+      - still life
+      shots:
+      - portrait
+      - upper body
+      - lower body
+      - cowboy shot
+      - feet out of frame
+      - full body
+      - wide shot
+      - very wide shot
+      - close-up
+      - cut-in
+      - profile
+      stls:
+      - abstract
+      - art deco
+      - art nouveau
+      - fake photograph
+      - fine art parody
+      - flame painter
+      - impressionism
+      - ligne claire
+      - nihonga
+      - sumi-e
+      - ukiyo-e
+      - minimalism
+      - realistic
+      - photorealistic
+      - sketch
+      - style parody
+      - surreal
+      - traditional media
+      - faux traditional media
+      - unfinished
+      vwngl:
+      - dutch angle
+      - from above
+      - from behind
+      - from below
+      - from side
+      - high up
+      - sideways
+      - straight-on
+      - three quarter view

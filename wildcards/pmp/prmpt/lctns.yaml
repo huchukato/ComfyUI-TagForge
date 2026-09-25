@@ -1,0 +1,243 @@
+pmp:
+  prmpt:
+    lctns:
+      indoor:
+      - bathroom
+      - bathtub
+      - toilet stall
+      - shower
+      - bedroom
+      - hotel room
+      - messy room
+      - otaku room
+      - dining room
+      - living room
+      - kitchen
+      - closet
+      - attic
+      - basement
+      - workshop
+      - garage
+      - laundry room
+      - boiler room
+      - break room
+      - green room
+      - janitor closet
+      - server room
+      - storage room
+      - throne room
+      - studio
+      - ballroom
+      - cafeteria
+      - changing room
+      - classroom
+      - clubroom
+      - conservatory
+      - courtroom
+      - dressing room
+      - fitting room
+      - gym
+      - locker room
+      - gym storeroom
+      - infirmary
+      - library
+      - office
+      - cubicle
+      - stage
+      - staff room
+      - armory
+      - examination room
+      - operating room
+      - hospital room
+      - interrogation room
+      - waiting room
+      - dungeon
+      - prison cell
+      - sex dungeon
+      - barn
+      - laboratory
+      outdoor:
+      - beach
+      - shore
+      - canyon
+      - cave
+      - cliff
+      - desert
+      - oasis
+      - forest
+      - bamboo forest
+      - glacier
+      - hill
+      - island
+      - floating island
+      - jungle
+      - meadow
+      - mountain
+      - volcano
+      - nature
+      - park
+      - playground
+      - plain
+      - savannah
+      - wetland
+      - water
+      - geyser
+      - lake
+      - ocean
+      - seafloor
+      - pond
+      - river
+      - stream
+      - waterfall
+      - wasteland
+      - rural
+      - town
+      - village
+      - field
+      - flower field
+      - rice paddy
+      - wheat field
+      - garden
+      - graveyard
+      - farm
+      - stable
+      - barn
+      - lakeside
+      - seaside
+      - harbor
+      - dock
+      - drydock
+      - shipyard
+      - jetty
+      - pier
+      - canal
+      - aqueduct
+      - well
+      - bridge
+      - rope bridge
+      - wooden bridge
+      - dam
+      - fountain
+      - gazebo
+      - greenhouse
+      - lighthouse
+      - ruins
+      - treehouse
+      - windmill
+      - shack
+      - hut
+      - stilt house
+      rndmlctns:
+      - '{__indoor__|__outdoor__|__special__}'
+      special:
+      - city
+      - floating city
+      - urban
+      - road
+      - alley
+      - crosswalk
+      - dirt road
+      - highway
+      - path
+      - sidewalk
+      - stone walkway
+      - street
+      - railroad tracks
+      - railroad crossing
+      - tunnel
+      - trench
+      - parking lot
+      - airfield
+      - runway
+      - bus
+      - bus stop
+      - ship
+      - spacecraft
+      - train station
+      - phone booth
+      - airport
+      - control tower
+      - hangar
+      - apartment
+      - aquarium
+      - arcade
+      - bar
+      - saloon
+      - izakaya
+      - tavern
+      - bunker
+      - bowling alley
+      - cafe
+      - casino
+      - castle
+      - floating castle
+      - church
+      - construction site
+      - convention
+      - gas station
+      - hospital
+      - house
+      - hotel
+      - industrial
+      - factory
+      - refinery
+      - power plant
+      - nuclear powerplant
+      - cooling tower
+      - warehouse
+      - mall
+      - megastructure
+      - space elevator
+      - military base
+      - mosque
+      - museum
+      - art gallery
+      - nightclub
+      - observatory
+      - onsen
+      - pagoda
+      - planetarium
+      - prison
+      - restaurant
+      - rooftop
+      - school
+      - skating rink
+      - shrine
+      - shop
+      - bakery
+      - bookstore
+      - convenience store
+      - flower shop
+      - pharmacy
+      - salon
+      - sex shop
+      - supermarket
+      - weapon shop
+      - skyscraper
+      - stadium
+      - arena
+      - temple
+      - theater
+      - amphitheater
+      - movie theater
+      - tower
+      - bell tower
+      - clock tower
+      - watchtower
+      - minaret
+      - amusement park
+      - carousel
+      - ferris wheel
+      - roller coaster
+      - waterpark
+      - zoo
+      - dog park
+      - soccer field
+      - running track
+      - market
+      - market stall
+      - slave market
+      - space
+      - public
+      - inside
+      - outside
