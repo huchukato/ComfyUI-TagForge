@@ -1,3 +1,4 @@
+import json
 import pathlib
 import threading
 import urllib.request
@@ -40,10 +41,35 @@ _GARAGE_WILDCARDS = (
 )
 
 
+_GARAGE_TREE_URL = "https://api.github.com/repos/huchukato/ComfyUI-Garage/git/trees/master?recursive=1"
+_WILDCARD_EXTS = {".yaml", ".yml", ".txt"}
+
+
+def _garage_wildcard_list():
+    """List every wildcard file under wildcards/ in the Garage repo.
+    Falls back to the bundled list if the GitHub API is unreachable."""
+    try:
+        req = urllib.request.Request(
+            _GARAGE_TREE_URL, headers={"User-Agent": "ComfyUI-TagForge"})
+        tree = json.loads(urllib.request.urlopen(req, timeout=10).read())
+        paths = [
+            blob["path"][len("wildcards/"):]
+            for blob in tree.get("tree", [])
+            if blob.get("type") == "blob"
+            and blob["path"].startswith("wildcards/")
+            and pathlib.PurePosixPath(blob["path"]).suffix.lower() in _WILDCARD_EXTS
+        ]
+        if paths:
+            return paths
+    except Exception as exc:
+        print(f"[TagForge] Garage wildcard listing failed, using bundled list: {exc}")
+    return list(_GARAGE_WILDCARDS)
+
+
 def _sync_garage_wildcards():
     root = pathlib.Path(__file__).resolve().parent / "wildcards"
     updated = False
-    for rel in _GARAGE_WILDCARDS:
+    for rel in _garage_wildcard_list():
         try:
             data = urllib.request.urlopen(f"{_GARAGE_WILDCARDS_URL}/{rel}", timeout=10).read()
             dest = root / rel
