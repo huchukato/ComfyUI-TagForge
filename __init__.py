@@ -36,6 +36,7 @@ _GARAGE_WILDCARDS = (
     "pmp/prmpt/light.yaml",
     "pmp/prmpt/pose.yaml",
     "pmp/prmpt/styles.yaml",
+    "vid/act.yaml",
 )
 
 
