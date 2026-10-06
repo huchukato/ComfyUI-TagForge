@@ -2,6 +2,14 @@
 
 All notable changes to ComfyUI-TagForge will be documented in this file.
 
+## [2.2.9] - 2026-10-06
+
+- Bundled the new `pmp/prmpt/lens.yaml` wildcard set (26 camera-lens phrasings across ultrawide/wide/standard/portrait/telephoto/macro/special) so fresh installs have it even before the Garage sync runs.
+
+## [2.2.8] - 2026-10-06
+
+- Wildcard sync and bundled set refreshed from Garage.
+
 ## [2.2.7] - 2026-09-25
 
 - Wildcards now self-update on every ComfyUI start: the bundled `pmp/*` yaml files are synced from the Garage repo (the source of truth) in a background thread, so prompt fixes ship without a node release or pod rebuild. Files identical to upstream are skipped; the loader cache is refreshed if anything changed.
