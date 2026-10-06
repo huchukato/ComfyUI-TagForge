@@ -1,0 +1,36 @@
+pmp:
+  prmpt:
+    lens:
+      ultrawide:
+      - shot on a 12mm ultra-wide lens, extreme depth of field, exaggerated perspective, dramatic foreground-to-background stretch, subtle edge distortion
+      - shot on a 14mm ultra-wide lens, vast environmental context, exaggerated sense of scale, deep focus throughout the frame
+      - shot on a 16mm ultra-wide lens, immersive wide perspective, dramatic leading lines, everything in sharp focus
+      - shot on a 16mm fisheye lens, extreme barrel distortion, curved horizon, exaggerated spherical perspective, everything in focus
+      wide:
+      - shot on a 18mm wide-angle lens, expansive scene coverage, deep depth of field, slight perspective stretch at the edges
+      - shot on a 24mm wide-angle lens, environmental context, natural perspective with mild expansion, deep focus
+      - shot on a 28mm wide-angle lens, documentary field of view, subject embedded in the environment, generous depth of field
+      - shot on a 21mm wide-angle lens, dynamic near-far perspective, prominent foreground detail, deep focus
+      standard:
+      - shot on a 35mm lens, natural field of view close to human vision, environmental storytelling, moderate depth of field
+      - shot on a 40mm lens, neutral perspective, balanced subject-to-background relationship, natural proportions
+      - shot on a 50mm lens, classic normal perspective, faithful proportions, pleasant background separation at f/2
+      - shot on a 50mm lens at f/1.8, thin depth of field, soft background blur, natural perspective
+      portrait:
+      - shot on an 85mm lens at f/1.4, shallow depth of field, creamy bokeh, flattering facial compression, subject isolated from the background
+      - shot on an 85mm lens at f/2, sharp subject on a softly blurred background, classic portrait compression
+      - shot on a 105mm lens at f/2, smooth background melt, gentle compression, intimate framing
+      - shot on a 135mm lens at f/1.8, strong background compression, buttery bokeh, subject floating over a soft backdrop
+      telephoto:
+      - shot on a 200mm telephoto lens, compressed background stacked behind the subject, narrow depth of field, distant flat perspective
+      - shot on a 300mm telephoto lens, extreme compression, layered background elements pulled close, razor-thin focus plane
+      - shot on a 70-200mm zoom at 200mm f/2.8, compressed candid framing, subject isolated with soft blurred surroundings
+      macro:
+      - shot on a 100mm macro lens at f/2.8, extreme close-up detail, razor-thin depth of field, textures rendered at life-size magnification
+      - shot on a 90mm macro lens, minute surface detail, focus falloff melting into creamy blur, shallow plane of sharpness
+      - extreme macro shot, individual textures and micro-details in focus, heavy bokeh surrounding the focal plane
+      special:
+      - shot on a tilt-shift lens, selective focus band across the frame, miniature-like depth effect, edges falling into blur
+      - shot on an anamorphic lens, oval bokeh highlights, horizontal lens flare, cinematic 2.39:1 character, subtle barrel distortion
+      - shot on a vintage manual lens, soft glow wide open, swirly bokeh, low contrast rendering, gentle flare
+      - shot on a 8mm circular fisheye lens, fully rounded distorted frame, surreal perspective, everything in focus
