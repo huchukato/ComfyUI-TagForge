@@ -13,11 +13,11 @@ class WildcardProcessorNode:
             "negative": "",
         },
         "Pony": {
-            "positive": "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle",
+            "positive": "score_9, score_8_up, score_7_up",
             "negative": "score_6, score_5, score_4, worst quality, low quality, ugly, malformed, bad anatomy, grayscale, watermark",
         },
         "Illustrious": {
-            "positive": "masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, adult",
+            "positive": "masterwork, masterpiece, best quality, detailed, high detail, very aesthetic",
             "negative": "lowres, worst quality, low quality, bad anatomy, bad hands, jpeg artifacts, signature, watermark, text, logo, extra digits, censored, loli, blurry, deformed, extra limbs, missing limbs, poorly drawn face, poorly drawn hands",
         },
     }

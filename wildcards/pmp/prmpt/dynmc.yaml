@@ -1,0 +1,8 @@
+pmp:
+  prmpt:
+    dynmc:
+    - "depth of field, dynamic pose, dynamic angle"
+    - "dynamic pose, dynamic angle"
+    - "dynamic pose"
+    - "dynamic angle"
+    - "depth of field"
