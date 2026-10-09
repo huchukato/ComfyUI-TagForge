@@ -2,6 +2,10 @@
 
 All notable changes to ComfyUI-TagForge will be documented in this file.
 
+## [2.3.2] - 2026-10-09
+
+- Fixed settings panel on newer ComfyUI frontends: the redesigned settings dialog builds its tree from the full `category` path, so a single-element `["TagForge"]` collapsed every setting into one leaf and only "Enable" survived under "Other". Settings now declare `["TagForge", <subgroup>, <name>]` and appear as a proper "TagForge" section with General / Tag Files / Completion / Sources groups.
+
 ## [2.3.1] - 2026-10-09
 
 - Garage wildcard sync is now a true mirror: files removed or renamed upstream are deleted locally (scoped to Garage-managed dirs), empty folders are pruned, and a `.garage-manifest` tracks synced paths across boots. Bundles the new `mmh3/` wildcard family (camera, music, style, nsfw) and drops the retired `vid/` set.

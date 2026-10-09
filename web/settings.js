@@ -40,7 +40,7 @@ export const settings = {
     enable: {
         name: "Enable",
         id: mk_name("enable"),
-        category: ["TagForge"],
+        category: ["TagForge", "General", "Enable"],
         type: "boolean",
         defaultValue: true,
         onChange: async (value) => {
@@ -52,7 +52,7 @@ export const settings = {
     mainFile: {
         name: "Choose Main File",
         id: mk_name("mainTagsFile"),
-        category: ["TagForge"],
+        category: ["TagForge", "Tag Files", "Choose Main File"],
         type: "combo",
         defaultValue: "",
         options: [],
@@ -64,7 +64,7 @@ export const settings = {
     extraFile: {
         name: "Choose Extra File",
         id: mk_name("extraTagsFile"),
-        category: ["TagForge"],
+        category: ["TagForge", "Tag Files", "Choose Extra File"],
         type: "combo",
         defaultValue: "",
         options: [],
@@ -76,7 +76,7 @@ export const settings = {
     translateFile: {
         name: "Choose Translate File",
         id: mk_name("translateFile"),
-        category: ["TagForge"],
+        category: ["TagForge", "Tag Files", "Choose Translate File"],
         type: "combo",
         defaultValue: "None",
         options: ["None"],
@@ -88,7 +88,7 @@ export const settings = {
     delimiter: {
         name: "Delimiter",
         id: mk_name("delimiter"),
-        category: ["TagForge"],
+        category: ["TagForge", "Completion", "Delimiter"],
         type: "combo",
         defaultValue: ",",
         options: [
@@ -104,7 +104,7 @@ export const settings = {
     addSpace: {
         name: "Add 'Space' after delimiter",
         id: mk_name("insertSpace"),
-        category: ["TagForge"],
+        category: ["TagForge", "Completion", "Add Space after delimiter"],
         type: "boolean",
         defaultValue: true,
         onChange: (value) => {
@@ -115,7 +115,7 @@ export const settings = {
     suggestionCount: {
         name: "Max Suggestions to Display",
         id: mk_name("suggestionCount"),
-        category: ["TagForge"],
+        category: ["TagForge", "Completion", "Max Suggestions to Display"],
         type: "slider",
         defaultValue: 20,
         attrs: { min: 0, max: 200, step: 1 },
@@ -128,7 +128,7 @@ export const settings = {
     wikiLink: {
         name: "Add 🔍 Link button",
         id: mk_name("wikiLink"),
-        category: ["TagForge"],
+        category: ["TagForge", "Completion", "Wiki Link Button"],
         type: "boolean",
         defaultValue: true,
         tooltip: "Add a 🔍 button that opens the tag's site page.",
@@ -140,7 +140,7 @@ export const settings = {
     replaceUnderbar: {
         name: "Replace '_' with 'Space'",
         id: mk_name("replaceUnderbar"),
-        category: ["TagForge"],
+        category: ["TagForge", "Completion", "Replace Underscore"],
         type: "boolean",
         defaultValue: true,
         onChange: (value) => {
@@ -151,7 +151,7 @@ export const settings = {
     delay: {
         name: "Completion Delay (ms)",
         id: mk_name("completionDelay"),
-        category: ["TagForge"],
+        category: ["TagForge", "Completion", "Completion Delay"],
         type: "slider",
         defaultValue: 50,
         attrs: { min: 0, max: 200, step: 10 },
@@ -163,7 +163,7 @@ export const settings = {
     embeddings: {
         name: "Enable Embeddings",
         id: mk_name("enableEmbeddings"),
-        category: ["TagForge"],
+        category: ["TagForge", "Sources", "Enable Embeddings"],
         type: "boolean",
         defaultValue: false,
         onChange: async (value) => {
@@ -174,7 +174,7 @@ export const settings = {
     loras: {
         name: "Enable LoRAs",
         id: mk_name("enableLoras"),
-        category: ["TagForge"],
+        category: ["TagForge", "Sources", "Enable LoRAs"],
         type: "boolean",
         defaultValue: false,
         onChange: async (value) => {
@@ -185,7 +185,7 @@ export const settings = {
     wildcards: {
         name: "Enable Wildcards",
         id: mk_name("enableWildcards"),
-        category: ["TagForge"],
+        category: ["TagForge", "Sources", "Enable Wildcards"],
         type: "boolean",
         defaultValue: true,
         onChange: async (value) => {
@@ -196,7 +196,7 @@ export const settings = {
     restirctAlias: {
         name: "Restrict Alias",
         id: mk_name("restrict Alias"),
-        category: ["TagForge"],
+        category: ["TagForge", "Completion", "Restrict Alias"],
         type: "boolean",
         defaultValue: false,
         tooltip: "If enabled, aliases are only sohwn when an exact match is found.",
