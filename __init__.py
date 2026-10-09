@@ -37,7 +37,10 @@ _GARAGE_WILDCARDS = (
     "pmp/prmpt/light.yaml",
     "pmp/prmpt/pose.yaml",
     "pmp/prmpt/styles.yaml",
-    "vid/act.yaml",
+    "mmh3/camera.yaml",
+    "mmh3/music.yaml",
+    "mmh3/nsfw.yaml",
+    "mmh3/style.yaml",
 )
 
 
@@ -68,8 +71,31 @@ def _garage_wildcard_list():
 
 def _sync_garage_wildcards():
     root = pathlib.Path(__file__).resolve().parent / "wildcards"
+    manifest = root / ".garage-manifest"
+    upstream = _garage_wildcard_list()
     updated = False
-    for rel in _garage_wildcard_list():
+    try:
+        prev = set(manifest.read_text().splitlines()) if manifest.exists() else set()
+    except Exception:
+        prev = set()
+    managed = {rel.split("/")[0] for rel in upstream}
+    managed |= {rel.split("/")[0] for rel in prev} | {"vid"}
+    try:
+        local = {p.relative_to(root).as_posix() for p in root.rglob("*")
+                 if p.is_file() and p.name not in (".garage-manifest", ".gitkeep")}
+    except Exception:
+        local = set()
+    stale = (prev | {rel for rel in local if rel.split("/")[0] in managed}) - set(upstream)
+    for rel in stale:
+        target = root / rel
+        try:
+            if target.is_file():
+                target.unlink()
+                updated = True
+                print(f"[TagForge] wildcard removed (gone from Garage): {rel}")
+        except Exception as exc:
+            print(f"[TagForge] wildcard removal failed {rel}: {exc}")
+    for rel in upstream:
         try:
             data = urllib.request.urlopen(f"{_GARAGE_WILDCARDS_URL}/{rel}", timeout=10).read()
             dest = root / rel
@@ -81,6 +107,16 @@ def _sync_garage_wildcards():
             print(f"[TagForge] wildcard updated from Garage: {rel}")
         except Exception as exc:
             print(f"[TagForge] wildcard sync skipped {rel}: {exc}")
+    try:
+        manifest.write_text("\n".join(upstream))
+    except Exception:
+        pass
+    for child in sorted(root.rglob("*"), key=lambda p: -len(p.parts)):
+        try:
+            if child.is_dir() and not any(child.iterdir()):
+                child.rmdir()
+        except Exception:
+            pass
     if updated:
         try:
             wildcard_processor.WildcardLoader.refresh()
