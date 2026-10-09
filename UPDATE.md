@@ -2,7 +2,7 @@
 
 All notable changes to ComfyUI-TagForge will be documented in this file.
 
-## [2.3.1] - 2026-10-31
+## [2.3.1] - 2026-10-09
 
 - Garage wildcard sync is now a true mirror: files removed or renamed upstream are deleted locally (scoped to Garage-managed dirs), empty folders are pruned, and a `.garage-manifest` tracks synced paths across boots. Bundles the new `mmh3/` wildcard family (camera, music, style, nsfw) and drops the retired `vid/` set.
 
