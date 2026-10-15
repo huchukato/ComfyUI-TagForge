@@ -25,7 +25,6 @@ _GARAGE_WILDCARDS = (
     "pmp/actmmf.yaml",
     "pmp/actsolo.yaml",
     "pmp/blwjob.yaml",
-    "pmp/prmpt.yaml",
     "pmp/qwen21.yaml",
     "pmp/prmpt/acc.yaml",
     "pmp/prmpt/char.yaml",
